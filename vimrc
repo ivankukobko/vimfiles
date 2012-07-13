@@ -8,20 +8,31 @@ syntax on
 
 
 set number
-set showmatch
 set showmode
 set mouse=a             " enabling mouse, if terminal supports it
+set modelines=0
 
 " Search options
 set ignorecase
 set smartcase
 set hlsearch
 set incsearch
+set showmatch   " show matching brackets
+nnoremap <leader><space> :noh<cr> " clear search highlight
 
 " Indent options
 set autoindent
 set copyindent
 set expandtab
+set tabstop=4   " because 8 is too much
+set shiftwidth=4
+set softtabstop=4
+
+" Handle long lines
+set wrap
+set textwidth=79
+set formatoptions=qrn1
+set colorcolumn=85
 
 " Don't keep swap and backup files
 set nobackup
@@ -43,13 +54,39 @@ set laststatus=2
 nnoremap j gj
 nnoremap k gk
 
+" Learn not to use arrows in normal mode
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+
+" Simple windows navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" Make search use normal regexes
+nnoremap / /\v
+vnoremap / /\v
+
 " Easy window navigation
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
-nnoremap <leader>w <C-w>v<C-w>l
+nnoremap <leader>w <C-w>v<C-w>l   " split current window
 
+" Map W to work too, when <S> is pressed accidentally
+command W w
+command Wq wq
+
+
+set t_Co=256
 if has("gui_running")
         " Disable scrollbars and toolbars
         set guioptions-=m
@@ -63,3 +100,7 @@ if has("gui_running")
 else
         colorscheme darkblue    	
 end
+
+" NERDTree keys
+nnoremap <leader>p :NERDTreeToggle<CR>
+
