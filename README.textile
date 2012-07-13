@@ -14,6 +14,7 @@ h1. Bundled Plugins
 * "vim-haml":https://github.com/tpope/vim-haml &mdash; Vim runtime files for Haml, Sass, and SCSS
 * "nerdtree":https://github.com/scrooloose/nerdtree &mdash; A tree explorer plugin for vim
 * "nerdcommenter":https://github.com/scrooloose/nerdcommenter &mdash; Vim plugin for intensely orgasmic commenting
+* "snipmate.vim":https://github.com/msanders/snipmate.vim &mdash; script that implements some of TextMate's snippets features in Vim
 
 h1. Usage
 
