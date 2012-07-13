@@ -31,11 +31,12 @@ set wildmenu
 set wildmode=list:full
 
 " Status line setup
-set statusline=%f%M     " Tail of the filename
-set statusline+=%=      " left/right separator      
-set statusline+=%c,     " cursor column
-set statusline+=%l/%L   " cursor line/total lines
-set statusline+=\ %P    " percent through file
+set statusline=%f%M                       " Tail of the filename
+set statusline+=%{fugitive#statusline()}  " fugitive-vim status
+set statusline+=%=                        " left/right separator      
+set statusline+=%c,                       " cursor column
+set statusline+=%l/%L                     " cursor line/total lines
+set statusline+=\ %P                      " percent through file
 set laststatus=2
 
 " Remap j and k to act as expected when used on long, wrapped, lines

@@ -10,6 +10,7 @@ h1. Bundled Plugins
 
 * "vim-endwise":https://github.com/tpope/vim-endwise &mdash; wisely add "end" in ruby, endfunction/endif/more in vim script, etc
 * "vim-rails":https://github.com/tpope/vim-rails &mdash; Ruby on Rails power tools
+* "vim-fugitive":https://github.com/tpope/vim-fugitive &mdash; a Git wrapper so awesome, it should be illegal
 
 h1. Usage
 
