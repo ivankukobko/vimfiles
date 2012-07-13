@@ -11,6 +11,9 @@ h1. Bundled Plugins
 * "vim-endwise":https://github.com/tpope/vim-endwise &mdash; wisely add "end" in ruby, endfunction/endif/more in vim script, etc
 * "vim-rails":https://github.com/tpope/vim-rails &mdash; Ruby on Rails power tools
 * "vim-fugitive":https://github.com/tpope/vim-fugitive &mdash; a Git wrapper so awesome, it should be illegal
+* "vim-haml":https://github.com/tpope/vim-haml &mdash; Vim runtime files for Haml, Sass, and SCSS
+* "nerdtree":https://github.com/scrooloose/nerdtree &mdash; A tree explorer plugin for vim
+* "nerdcommenter":https://github.com/scrooloose/nerdcommenter &mdash; Vim plugin for intensely orgasmic commenting
 
 h1. Usage
 
