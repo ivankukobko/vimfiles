@@ -85,7 +85,6 @@ nnoremap <leader>w <C-w>v<C-w>l   " split current window
 command W w
 command Wq wq
 
-
 set t_Co=256
 if has("gui_running")
         " Disable scrollbars and toolbars
@@ -100,6 +99,9 @@ if has("gui_running")
 else
         colorscheme darkblue    	
 end
+
+" Sort properties in css declaration
+nnoremap <leader>S ?{<CR>jV/^\s*\}?$<CR>k:sort<CR>:noh<CR>
 
 " NERDTree keys
 nnoremap <leader>p :NERDTreeToggle<CR>
