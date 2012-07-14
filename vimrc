@@ -17,7 +17,7 @@ set ignorecase
 set smartcase
 set hlsearch
 set incsearch
-set showmatch   " show matching brackets
+set showmatch                     " show matching brackets
 nnoremap <leader><space> :noh<cr> " clear search highlight
 
 " Indent options
@@ -31,8 +31,8 @@ set softtabstop=4
 " Handle long lines
 set wrap
 set textwidth=79
-set formatoptions=qrn1
-set colorcolumn=85
+"set formatoptions=qrn1
+"set colorcolumn=85
 
 " Don't keep swap and backup files
 set nobackup
@@ -82,8 +82,9 @@ noremap <C-l> <C-w>l
 nnoremap <leader>w <C-w>v<C-w>l   " split current window
 
 " Map W to work too, when <S> is pressed accidentally
-command W w
+command W  w
 command Wq wq
+command Qa qa
 
 set t_Co=256
 if has("gui_running")
@@ -105,4 +106,12 @@ nnoremap <leader>S ?{<CR>jV/^\s*\}?$<CR>k:sort<CR>:noh<CR>
 
 " NERDTree keys
 nnoremap <leader>p :NERDTreeToggle<CR>
+
+" Ack search
+let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+nnoremap <leader>a :Ack<space>
+
+" FuzzyFinder
+nnoremap <leader>t :FufCoverageFile<CR>
+nnoremap <leader>b :FufBuffer<CR>
 
