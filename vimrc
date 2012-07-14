@@ -29,8 +29,9 @@ set shiftwidth=4
 set softtabstop=4
 
 " Handle long lines
-set wrap
+set wrap linebreak nolist
 set textwidth=79
+set showbreak=…
 "set formatoptions=qrn1
 "set colorcolumn=85
 
@@ -59,10 +60,10 @@ nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
 nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
+"inoremap <up> <nop>
+"inoremap <down> <nop>
+"inoremap <left> <nop>
+"inoremap <right> <nop>
 
 " Simple windows navigation
 nnoremap <C-h> <C-w>h
