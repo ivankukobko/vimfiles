@@ -51,6 +51,8 @@ set statusline+=%l/%L                     " cursor line/total lines
 set statusline+=\ %P                      " percent through file
 set laststatus=2
 
+set cpoptions+=$
+
 " Remap j and k to act as expected when used on long, wrapped, lines
 nnoremap j gj
 nnoremap k gk
