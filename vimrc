@@ -99,7 +99,7 @@ if has("gui_running")
         set guioptions-=r
         set guioptions-=R
 
-        colorscheme mustang
+        colorscheme tesla
 else
         colorscheme lucius 
 end
@@ -118,3 +118,4 @@ nnoremap <leader>a :Ack<space>
 nnoremap <leader>t :FufCoverageFile<CR>
 nnoremap <leader>b :FufBuffer<CR>
 
+nnoremap <C-b> :CtrlPBuffer<CR>

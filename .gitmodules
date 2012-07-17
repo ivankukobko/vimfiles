@@ -25,9 +25,6 @@
 [submodule "bundle/vim-aldmeris"]
 	path = bundle/vim-aldmeris
 	url = git://github.com/veloce/vim-aldmeris.git
-[submodule "bundle/fuzzy-finder"]
-	path = bundle/fuzzy-finder
-	url = git://github.com/vim-scripts/FuzzyFinder.git
 [submodule "bundle/l9"]
 	path = bundle/l9
 	url = git://github.com/vim-scripts/L9.git
