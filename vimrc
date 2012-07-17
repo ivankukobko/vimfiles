@@ -91,17 +91,9 @@ command Qa qa
 
 set t_Co=256
 if has("gui_running")
-        " Disable scrollbars and toolbars
-        set guioptions-=m
-        set guioptions-=T
-        set guioptions-=l
-        set guioptions-=L
-        set guioptions-=r
-        set guioptions-=R
-
-        colorscheme tesla
+    " Moved everything from here to gvimrc
 else
-        colorscheme lucius 
+    colorscheme lucius 
 end
 
 " Sort properties in css declaration
@@ -114,8 +106,5 @@ nnoremap <leader>p :NERDTreeToggle<CR>
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 nnoremap <leader>a :Ack<space>
 
-" FuzzyFinder
-nnoremap <leader>t :FufCoverageFile<CR>
-nnoremap <leader>b :FufBuffer<CR>
-
+" Opening CtrlP buffer search with separate command
 nnoremap <C-b> :CtrlPBuffer<CR>
