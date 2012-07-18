@@ -1,7 +1,7 @@
 "When the GUI starts, t_vb is reset to its default value.
 "Reassert that no flash or beep is wanted.
 set visualbell t_vb=
-set guifont=Ubuntu\ Mono\ Regular\ 10
+set guifont=Ubuntu\ Mono\ Regular\ 14
 
 " Disable scrollbars and toolbars
 set guioptions-=m

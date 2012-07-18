@@ -90,10 +90,11 @@ command Wq wq
 command Qa qa
 
 set t_Co=256
+set encoding=utf-8
 if has("gui_running")
     " Moved everything from here to gvimrc
 else
-    colorscheme lucius 
+    colorscheme aldmeris
 end
 
 " Sort properties in css declaration
@@ -108,3 +109,5 @@ nnoremap <leader>a :Ack<space>
 
 " Opening CtrlP buffer search with separate command
 nnoremap <C-b> :CtrlPBuffer<CR>
+
+"let g:Powerline_symbols = 'compatible'
