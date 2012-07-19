@@ -19,6 +19,7 @@ set hlsearch
 set incsearch
 set showmatch                     " show matching brackets
 nnoremap <leader><space> :noh<cr> " clear search highlight
+set history=1000
 
 " Indent options
 set autoindent
@@ -43,13 +44,12 @@ set wildmenu
 set wildmode=list:full
 
 " Status line setup
-set statusline=%f%M                       " Tail of the filename
-set statusline+=%{fugitive#statusline()}  " fugitive-vim status
-set statusline+=%=                        " left/right separator      
-set statusline+=%c,                       " cursor column
-set statusline+=%l/%L                     " cursor line/total lines
-set statusline+=\ %P                      " percent through file
 set laststatus=2
+set statusline=\ %f%M%R\                       " Filename and flags
+set statusline+=\ %{fugitive#statusline()}\     " fugitive-vim status
+set statusline+=%=                          " left/right separator      
+set statusline+=\ [%c:%l/%L]\ %P\        " cursor line/column
+
 
 set cpoptions+=$
 
@@ -72,17 +72,13 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+nnoremap <leader>w <C-w>v<C-w>l     " split current window
+map <leader>bd :Bclose<cr>          " Close current buffer
 
 " Make search use normal regexes
 nnoremap / /\v
 vnoremap / /\v
 
-" Easy window navigation
-noremap <C-h> <C-w>h
-noremap <C-j> <C-w>j
-noremap <C-k> <C-w>k
-noremap <C-l> <C-w>l
-nnoremap <leader>w <C-w>v<C-w>l   " split current window
 
 " Map W to work too, when <S> is pressed accidentally
 command W  w
@@ -108,6 +104,33 @@ let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 nnoremap <leader>a :Ack<space>
 
 " Opening CtrlP buffer search with separate command
-nnoremap <C-b> :CtrlPBuffer<CR>
+nnoremap <C-b> :CtrlPBuffer<CR> 
+  
+" Delete trailing white space on save, useful for Python and CoffeeScript ;)
+func! DeleteTrailingWS()
+    exe "normal mz"
+    %s/\v\+$//ge
+    exe "normal `z" 
+endfunc
+autocmd BufWrite * :call DeleteTrailingWS()
 
-"let g:Powerline_symbols = 'compatible'
+" Don't close window, when deleting a buffer
+command! Bclose call <SID>BufcloseCloseIt()
+function! <SID>BufcloseCloseIt()
+    let l:currentBufNum = bufnr("%")
+    let l:alternateBufNum = bufnr("#")
+
+    if buflisted(l:alternateBufNum)
+        buffer #
+    else
+        bnext
+    endif
+
+    if bufnr("%") == l:currentBufNum
+        new
+    endif
+
+    if buflisted(l:currentBufNum)
+        execute("bdelete! ".l:currentBufNum)
+    endif
+endfunction
