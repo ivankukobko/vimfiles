@@ -6,7 +6,6 @@ call pathogen#helptags()
 filetype plugin indent on	" now enabling detection, plugins and indentation
 syntax on
 
-
 set number
 set showmode
 set mouse=a             " enabling mouse, if terminal supports it
@@ -17,7 +16,7 @@ set ignorecase
 set smartcase
 set hlsearch
 set incsearch
-set showmatch                      " show matching brackets
+set showmatch     " show matching brackets
 set history=1000
 
 " Indent options
@@ -29,7 +28,7 @@ set shiftwidth=4
 set softtabstop=4
 
 " Handle long lines
-set wrap linebreak nolist
+set nowrap linebreak nolist
 set textwidth=79
 set showbreak=…
 
@@ -53,6 +52,13 @@ set cpoptions+=$
 " =========================================================================
 " KEY MAPPINGS
 " ========================================================================
+
+" change the mapleader from \ to ,
+let mapleader=","
+
+" switch to paste mode, disabling all kinds of smartness
+" and just pasting a whole buffer of text
+set pastetoggle=<F2>
 
 " Remap j and k to act as expected when used on long, wrapped, lines
 nnoremap j gj
@@ -103,7 +109,7 @@ else
 end
 
 " Sort properties in css declaration
-nnoremap <leader>S ?{<CR>jV/^\s*\}?$<CR>k:sort<CR>:noh<CR>
+nmap <leader>S ?{<CR>jV/^\s*\}?$<CR>k:sort<CR>:noh<CR>
 
 " =========================================================================
 " PLUGINS
@@ -120,7 +126,7 @@ nnoremap <leader>a :Ack<space>
 nnoremap <C-b> :CtrlPBuffer<CR>
 
 " =========================================================================
-" FUNCTIONS
+" FUNCTIONS (STOLEN FROM THE INTERNETZ)
 " ========================================================================
 
 " Delete trailing white space on save, useful for Python and CoffeeScript ;)
