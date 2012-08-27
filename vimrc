@@ -95,6 +95,10 @@ nnoremap <leader><space> :noh<cr>   " clear search highlight
 nnoremap / /\v
 vnoremap / /\v
 
+" Reselect visual block after indent/outdent
+vnoremap < <gv
+vnoremap > >gv
+
 " Map W and Q to work too, when <S> is pressed accidentally
 command W  w
 command Wq wq
