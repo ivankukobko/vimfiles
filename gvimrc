@@ -7,8 +7,9 @@ set guifont=Ubuntu\ Mono\ Regular\ 14
 set guioptions-=m
 set guioptions-=T
 set guioptions-=l
-set guioptions-=L
-set guioptions-=r
-set guioptions-=R
+"set guioptions-=L
+"set guioptions-=r
+"set guioptions-=R
 
-colorscheme tesla
+"colorscheme tesla
+colorscheme lucius
