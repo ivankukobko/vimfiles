@@ -129,6 +129,7 @@ nnoremap <leader>a :Ack<space>
 " Opening CtrlP buffer search with separate command
 nnoremap <C-b> :CtrlPBuffer<CR>
 
+nnoremap <F5> :UndotreeToggle<cr>
 " =========================================================================
 " FUNCTIONS (STOLEN FROM THE INTERNETZ)
 " ========================================================================
