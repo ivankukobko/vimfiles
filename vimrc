@@ -109,7 +109,7 @@ set encoding=utf-8
 if has("gui_running")
     " Moved everything from here to gvimrc
 else
-    colorscheme aldmeris
+    colorscheme xoria256
 end
 
 " Sort properties in css declaration
