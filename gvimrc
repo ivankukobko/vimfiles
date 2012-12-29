@@ -11,4 +11,6 @@ set guioptions-=L
 set guioptions-=r
 set guioptions-=R
 
+set noballooneval
+
 colorscheme FreshCut

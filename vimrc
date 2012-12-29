@@ -1,8 +1,46 @@
 set nocompatible 		" Vim is better than Vi, True story
+filetype off 			" force reloading after pathogen/Vundle loaded
+"call pathogen#infect()
+"call pathogen#helptags()
 
-filetype off 			" force reloading after pathogen loaded
-call pathogen#infect()
-call pathogen#helptags()
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required!
+Bundle 'gmarik/vundle'
+
+" My Bundles here:
+"Bundle 'The-NERD-tree'
+"Bundle 'ack.vim'
+"Bundle 'ctrlp.vim'
+"Bundle 'endwise.vim'
+"Bundle 'less-syntax'
+"Bundle 'snipMate'
+"Bundle 'snipmate-snippets'
+"Bundle 'tlib'
+"Bundle 'vim-coffee-script'
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "honza/snipmate-snippets"
+Bundle "tomtom/tlib_vim"
+Bundle 'ervandew/supertab'
+Bundle 'garbas/vim-snipmate'
+Bundle 'hallison/vim-ruby-sinatra'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'kien/ctrlp.vim'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/nerdtree'
+Bundle 'skalnik/vim-vroom'
+Bundle 'stonean/slim'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-haml'
+Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-rvm'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'vim-scripts/ZoomWin'
+" original repos on github
+"
 filetype plugin indent on	" now enabling detection, plugins and indentation
 syntax on
 
