@@ -11,27 +11,21 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " My Bundles here:
-"Bundle 'The-NERD-tree'
-"Bundle 'ack.vim'
-"Bundle 'ctrlp.vim'
-"Bundle 'endwise.vim'
-"Bundle 'less-syntax'
-"Bundle 'snipMate'
-"Bundle 'snipmate-snippets'
-"Bundle 'tlib'
-"Bundle 'vim-coffee-script'
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "honza/snipmate-snippets"
-Bundle "tomtom/tlib_vim"
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'bbommarito/vim-slim'
 Bundle 'ervandew/supertab'
 Bundle 'garbas/vim-snipmate'
 Bundle 'hallison/vim-ruby-sinatra'
+Bundle 'honza/snipmate-snippets'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
+Bundle 'mileszs/ack.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'skalnik/vim-vroom'
-Bundle 'stonean/slim'
+Bundle 'tomtom/tlib_vim'
+Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-markdown'
@@ -79,10 +73,12 @@ set wildmode=list:full
 
 " Status line setup
 set laststatus=2
-set statusline=\ %f%M%R\                     " Filename and flags
-set statusline+=\ %{fugitive#statusline()}\  " fugitive-vim status
-set statusline+=%=                           " left/right separator
-set statusline+=\ [%c:%l/%L]\ %P\            " cursor line/column
+"set statusline=\ %f%M%R\                     " Filename and flags
+"set statusline+=\ %{fugitive#statusline()}\  " fugitive-vim status
+"set statusline+=%=                           " left/right separator
+"set statusline+=\ [%c:%l/%L]\ %P\            " cursor line/column
+"python from powerline.ext.vim import source_plugin; source_plugin()
+let g:Powerline_symbols = 'compatible'
 
 
 set cpoptions+=$
@@ -144,6 +140,7 @@ command Qa qa
 
 set t_Co=256
 set encoding=utf-8
+set fillchars+=stl:\ ,stlnc:\
 if has("gui_running")
     " Moved everything from here to gvimrc
 else
